@@ -1,15 +1,18 @@
 package com.syc.example.main;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.library_common.image.GlideImageLoader;
 import com.syc.example.R;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.List;
 
@@ -68,14 +71,20 @@ public class MainAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (isHeader(position)) {
             //处理头
-            ((HeaderViewHolder) holder).getBanner().setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE).setBannerTitles(titles).setImages(images).setImageLoader(new GlideImageLoader()).start();
+            Banner banner = ((HeaderViewHolder) holder).getBanner();
+            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE).setBannerTitles(titles).setImages(images).setImageLoader(new GlideImageLoader()).start();
+            banner.setOnBannerListener(new OnBannerListener() {
+                @Override
+                public void OnBannerClick(int position) {
+                    Log.e("------位置-------", position + "");
+                }
+            });
         } else {
             //其他条目中的逻辑在此
             ((BodyViewHolder) holder).getTextView().setText(dataList.get(position - 1).text);
             holder.itemView.setTag(dataList.get(position - 1));
             holder.itemView.setOnClickListener(new MyClick(position));
         }
-
     }
 
     /**
