@@ -1,4 +1,4 @@
-package com.syc.example.comment;
+package com.example.library_qq_comment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,10 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.syc.example.R;
-import com.syc.example.comment.model.Comment;
-import com.syc.example.comment.model.Moment;
-import com.syc.example.comment.model.User;
+import com.example.library_qq_comment.model.Comment;
+import com.example.library_qq_comment.model.Moment;
+import com.example.library_qq_comment.model.User;
 
 import java.util.ArrayList;
 

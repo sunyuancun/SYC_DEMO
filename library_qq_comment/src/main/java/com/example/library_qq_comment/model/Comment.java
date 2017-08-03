@@ -1,4 +1,4 @@
-package com.syc.example.comment.model;
+package com.example.library_qq_comment.model;
 
 /**
  * 评论对象

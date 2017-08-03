@@ -2,23 +2,24 @@ package com.syc.example.main;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.example.library_common.image.GlideImageLoader;
+import com.example.library_qq_comment.QQCommentActivity;
 import com.syc.example.R;
-import com.syc.example.comment.QQCommentActivity;
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WelcomeActivity extends Activity {
-
     Activity activity;
 
     @Override
@@ -41,8 +42,16 @@ public class WelcomeActivity extends Activity {
         //找到RecyclerView控件
         RecyclerView home_rv = (RecyclerView) findViewById(R.id.home_rv);
         //做一些假数据
-        List<MainBean> dataList = new ArrayList<>();
+        List<String> imageList = new ArrayList<>();
+        imageList.add("http://img.sccnn.com/bimg/339/25976.jpg");
+        imageList.add("http://img.sccnn.com/bimg/337/35579.jpg");
+        imageList.add("http://img.sccnn.com/bimg/339/26130.jpg");
+        List<String> titleList = new ArrayList<>();
+        titleList.add("我的中国梦");
+        titleList.add("京东年货节");
+        titleList.add("西湖龙井");
 
+        List<MainBean> dataList = new ArrayList<>();
         int size = 1;
         for (int i = 0; i < size; i++) {
             MainBean mainBean = new MainBean();
@@ -52,7 +61,7 @@ public class WelcomeActivity extends Activity {
             }
             dataList.add(mainBean);
         }
-        MainAdapter adapter = new MainAdapter(dataList);
+        MainAdapter adapter = new MainAdapter(titleList, imageList, dataList);
         home_rv.setAdapter(adapter);
         final GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -66,7 +75,6 @@ public class WelcomeActivity extends Activity {
         adapter.setOnItemClickListener(new MainAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int pos, MainBean data) {
-
                 if (pos == 1) {
                     startActivity(new Intent(activity, QQCommentActivity.class));
                 }

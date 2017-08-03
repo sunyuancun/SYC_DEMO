@@ -7,8 +7,6 @@ import android.graphics.drawable.Drawable;
  */
 
 public class MainBean {
-
     public String text;
     public Drawable image;
-
 }

@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.example.library_qq_comment">
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:supportsRtl="true">
+
+
+        <activity android:name="com.example.library_qq_comment.QQCommentActivity" />
+
+    </application>
+
+</manifest>

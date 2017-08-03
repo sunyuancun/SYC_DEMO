@@ -1,4 +1,4 @@
-package com.syc.example.comment;
+package com.example.library_qq_comment;
 
 import android.content.Context;
 import android.view.View;
@@ -8,8 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.syc.example.R;
-import com.syc.example.comment.model.Moment;
+import com.example.library_qq_comment.model.Moment;
 
 import java.util.ArrayList;
 

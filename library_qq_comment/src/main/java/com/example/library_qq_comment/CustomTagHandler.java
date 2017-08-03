@@ -1,4 +1,4 @@
-package com.syc.example.comment;
+package com.example.library_qq_comment;
 
 import android.content.Context;
 import android.text.Editable;
@@ -10,8 +10,8 @@ import android.text.style.TextAppearanceSpan;
 import android.view.View;
 
 
-import com.syc.example.R;
-import com.syc.example.comment.model.User;
+
+import com.example.library_qq_comment.model.User;
 
 import org.xml.sax.XMLReader;
 
