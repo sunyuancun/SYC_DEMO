@@ -20,18 +20,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**RecyclerView:实现带header的grid
+/**
+ * RecyclerView:实现带header的grid
  * 参考地址 ：http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0722/3214.html
  * https://github.com/crazyfzw/RecycleViewWithHeader
  */
 
 public class recycleviewItemHeaderActivity extends AppCompatActivity {
 
-
     private MyRecyclerCardviewAdapter adapter;
     private RecyclerView motivationRecyclerview;
-//    String data = "{\"errcode\":0,\"message\":\"success\",\"contents\":[{\"id\":\"6\",\"name\":\"\\u7cbe\\u9009\\u8bfe\\u7a0b\",\"courses\":[{\"id\":\"1\",\"teacher_name\":\"\\u82cf\\u6167\",\"image_thumb1\":\"http:\\/\\/zbcourse.jyq365.com\\/uploads\\/video\\/2017\\/08-11\\/598d742297d25_thumb.jpg\",\"title\":\"\\u534e\\u6587\\u65e9\\u8bfb\\u5f00\\u8bfe\",\"play_times\":\"5\",\"money\":\"5.00\"}]},{\"id\":\"12\",\"name\":\"\\u6d4b\\u8bd5\\u680f\\u76ee\",\"courses\":[{\"id\":\"1\",\"teacher_name\":\"\\u82cf\\u6167\",\"image_thumb1\":\"http:\\/\\/zbcourse.jyq365.com\\/uploads\\/video\\/2017\\/08-11\\/598d742297d25_thumb.jpg\",\"title\":\"\\u534e\\u6587\\u65e9\\u8bfb\\u5f00\\u8bfe\",\"play_times\":\"5\",\"money\":\"5.00\"}]}]}\n";
-String data ="{\"errcode\":0,\"message\":\"success\",\"contents\":[{\"id\":\"1\",\"name\":\"\\u7cbe\\u9009\\u8bfe\\u7a0b\",\"courses\":[{\"id\":\"3\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-09\\/598abb25ce3a7_thumb.jpg\",\"title\":\"\\u5029\\u5029\\u9996\\u79c0\\u5029\\u5029\\u9996\\u79c0\",\"play_times\":\"68\",\"money\":\"0.00\"},{\"id\":\"13\",\"teacher_name\":\"syc\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-07\\/5987dfccd0822_thumb.jpg\",\"title\":\"\\u554a\\u554a\\u554a\\u554a\\u554a\",\"play_times\":\"29\",\"money\":\"0.01\"}]},{\"id\":\"9\",\"name\":\"\\u5206\\u7c7b8\",\"courses\":[{\"id\":\"10\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/img\\/2017\\/07-25\\/59771088047ce_thumb.jpg\",\"title\":\"555555\",\"play_times\":\"0\",\"money\":\"0.01\"},{\"id\":\"11\",\"teacher_name\":\"\\u738b\\u8001\\u5e08\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/img\\/2017\\/07-25\\/597710a30002d_thumb.jpg\",\"title\":\"66666\",\"play_times\":\"0\",\"money\":\"0.01\"},{\"id\":\"3\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-09\\/598abb25ce3a7_thumb.jpg\",\"title\":\"\\u5029\\u5029\\u9996\\u79c0\\u5029\\u5029\\u9996\\u79c0\",\"play_times\":\"68\",\"money\":\"0.00\"}]},{\"id\":\"10\",\"name\":\"\\u6d4b\\u8bd5\\u680f\\u76ee\",\"courses\":[{\"id\":\"3\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-09\\/598abb25ce3a7_thumb.jpg\",\"title\":\"\\u5029\\u5029\\u9996\\u79c0\\u5029\\u5029\\u9996\\u79c0\",\"play_times\":\"68\",\"money\":\"0.00\"},{\"id\":\"13\",\"teacher_name\":\"syc\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-07\\/5987dfccd0822_thumb.jpg\",\"title\":\"\\u554a\\u554a\\u554a\\u554a\\u554a\",\"play_times\":\"29\",\"money\":\"0.01\"}]}]}";
+    String data = "{\"errcode\":0,\"message\":\"success\",\"contents\":[{\"id\":\"1\",\"name\":\"\\u7cbe\\u9009\\u8bfe\\u7a0b\",\"courses\":[{\"id\":\"3\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-09\\/598abb25ce3a7_thumb.jpg\",\"title\":\"\\u5029\\u5029\\u9996\\u79c0\\u5029\\u5029\\u9996\\u79c0\",\"play_times\":\"68\",\"money\":\"0.00\"},{\"id\":\"13\",\"teacher_name\":\"syc\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-07\\/5987dfccd0822_thumb.jpg\",\"title\":\"\\u554a\\u554a\\u554a\\u554a\\u554a\",\"play_times\":\"29\",\"money\":\"0.01\"}]},{\"id\":\"9\",\"name\":\"\\u5206\\u7c7b8\",\"courses\":[{\"id\":\"10\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/img\\/2017\\/07-25\\/59771088047ce_thumb.jpg\",\"title\":\"555555\",\"play_times\":\"0\",\"money\":\"0.01\"},{\"id\":\"11\",\"teacher_name\":\"\\u738b\\u8001\\u5e08\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/img\\/2017\\/07-25\\/597710a30002d_thumb.jpg\",\"title\":\"66666\",\"play_times\":\"0\",\"money\":\"0.01\"},{\"id\":\"3\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-09\\/598abb25ce3a7_thumb.jpg\",\"title\":\"\\u5029\\u5029\\u9996\\u79c0\\u5029\\u5029\\u9996\\u79c0\",\"play_times\":\"68\",\"money\":\"0.00\"}]},{\"id\":\"10\",\"name\":\"\\u6d4b\\u8bd5\\u680f\\u76ee\",\"courses\":[{\"id\":\"3\",\"teacher_name\":\"\\u5029\\u5029\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-09\\/598abb25ce3a7_thumb.jpg\",\"title\":\"\\u5029\\u5029\\u9996\\u79c0\\u5029\\u5029\\u9996\\u79c0\",\"play_times\":\"68\",\"money\":\"0.00\"},{\"id\":\"13\",\"teacher_name\":\"syc\",\"image_thumb1\":\"http:\\/\\/61.54.243.41:5566\\/uploads\\/video\\/2017\\/08-07\\/5987dfccd0822_thumb.jpg\",\"title\":\"\\u554a\\u554a\\u554a\\u554a\\u554a\",\"play_times\":\"29\",\"money\":\"0.01\"}]}]}";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +58,7 @@ String data ="{\"errcode\":0,\"message\":\"success\",\"contents\":[{\"id\":\"1\"
         initData(data);
 
         //4.创建adapter
-        adapter = new MyRecyclerCardviewAdapter(this,mItems);
+        adapter = new MyRecyclerCardviewAdapter(this, mItems);
         //将RecyclerView组件绑定adapter
         motivationRecyclerview.setAdapter(adapter);
 

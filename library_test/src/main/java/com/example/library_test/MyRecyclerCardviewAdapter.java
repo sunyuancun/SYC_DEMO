@@ -9,12 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.library_common.image.GlideImageLoader;
 
 import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Administrator on 2017/8/15.
  */
