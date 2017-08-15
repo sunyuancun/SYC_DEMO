@@ -19,6 +19,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**RecyclerView:实现带header的grid
+ * 参考地址 ：http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0722/3214.html
+ * https://github.com/crazyfzw/RecycleViewWithHeader
+ */
+
 public class recycleviewItemHeaderActivity extends AppCompatActivity {
 
 
