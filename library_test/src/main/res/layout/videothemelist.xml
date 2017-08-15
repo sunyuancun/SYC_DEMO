@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MotivationView"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+    <View
+        android:id="@+id/line"
+        android:background="@color/cardview_dark_background"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:layout_below="@+id/line"
+        android:id="@+id/hometab1_theme_title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="0dp"
+        android:drawableLeft="@drawable/hometab"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_below="@+id/line"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:focusable="false"
+        android:src="@drawable/ic_arrow_right" />
+</RelativeLayout>
+
+

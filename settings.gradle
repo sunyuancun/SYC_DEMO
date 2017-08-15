@@ -1,1 +1,1 @@
-include ':app', ':library_qq_comment', ':library_common'
+include ':app', ':library_qq_comment', ':library_common', ':library_test'

@@ -8,13 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.example.library_common.image.GlideImageLoader;
 import com.example.library_qq_comment.QQCommentActivity;
+import com.example.library_test.recycleviewItemHeaderActivity;
 import com.syc.example.R;
-import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,13 +49,19 @@ public class WelcomeActivity extends Activity {
         titleList.add("西湖龙井");
 
         List<MainBean> dataList = new ArrayList<>();
-        int size = 1;
+        int size = 2;
         for (int i = 0; i < size; i++) {
             MainBean mainBean = new MainBean();
             if (i == 0) {
                 mainBean.text = "QQ评论";
                 mainBean.image = getResources().getDrawable(R.drawable.ic_comment_black_24dp);
             }
+
+            if (i == 1) {
+                mainBean.text = "带分类头Recyclewview";
+                mainBean.image = getResources().getDrawable(R.drawable.ic_comment_black_24dp);
+            }
+
             dataList.add(mainBean);
         }
         MainAdapter adapter = new MainAdapter(titleList, imageList, dataList);
@@ -79,6 +82,9 @@ public class WelcomeActivity extends Activity {
                     startActivity(new Intent(activity, QQCommentActivity.class));
                 }
 
+                if (pos == 2) {
+                    startActivity(new Intent(activity, recycleviewItemHeaderActivity.class));
+                }
 
             }
         });
