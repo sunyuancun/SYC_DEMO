@@ -11,6 +11,7 @@ import android.view.WindowManager;
 
 import com.example.library_qq_comment.QQCommentActivity;
 import com.example.library_test.recycleviewItemHeaderActivity;
+import com.example.library_webview_video.WebviewActivity;
 import com.syc.example.R;
 
 import java.util.ArrayList;
@@ -49,17 +50,22 @@ public class WelcomeActivity extends Activity {
         titleList.add("西湖龙井");
 
         List<MainBean> dataList = new ArrayList<>();
-        int size = 2;
+        int size = 3;
         for (int i = 0; i < size; i++) {
             MainBean mainBean = new MainBean();
             if (i == 0) {
                 mainBean.text = "QQ评论";
-                mainBean.image = getResources().getDrawable(R.drawable.ic_comment_black_24dp);
+                mainBean.image = getResources().getDrawable(R.mipmap.ic_launcher);
             }
 
             if (i == 1) {
                 mainBean.text = "带分类头Recyclewview";
-                mainBean.image = getResources().getDrawable(R.drawable.ic_comment_black_24dp);
+                mainBean.image = getResources().getDrawable(R.mipmap.ic_launcher);
+            }
+
+            if (i == 2) {
+                mainBean.text = "webview video";
+                mainBean.image = getResources().getDrawable(R.mipmap.ic_launcher);
             }
 
             dataList.add(mainBean);
@@ -84,6 +90,10 @@ public class WelcomeActivity extends Activity {
 
                 if (pos == 2) {
                     startActivity(new Intent(activity, recycleviewItemHeaderActivity.class));
+                }
+
+                if (pos == 3) {
+                    startActivity(new Intent(activity, WebviewActivity.class));
                 }
 
             }
